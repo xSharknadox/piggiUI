@@ -1,6 +1,6 @@
 <template>
-    <div class="home">
-        <span>Welcome to best food app</span>
+    <div class="login">
+        <span>Login page</span>
     </div>
 </template>
 
@@ -8,10 +8,10 @@
     // @ is an alias to /src
 
     export default {
-        name: 'Home',
+        name: 'Login',
         components: {},
         beforeCreate: function () {
-            this.$store.commit('setActiveTab', "home")
+            this.$store.commit('setActiveTab', "login")
         }
     }
 </script>

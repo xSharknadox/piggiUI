@@ -1,32 +1,77 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <v-app>
+        <AppBarLoggedIn v-if="isLoggedIn"></AppBarLoggedIn>
+        <AppBarNotLoggedIn v-else></AppBarNotLoggedIn>
+
+        <v-main class="">
+            <router-view></router-view>
+        </v-main>
+    </v-app>
 </template>
 
+<script>
+
+    import AppBarLoggedIn from '@/components/AppBarLoggedIn'
+    import AppBarNotLoggedIn from '@/components/AppBarNotLoggedIn'
+
+    export default {
+        name: 'App',
+
+        components: {AppBarLoggedIn, AppBarNotLoggedIn},
+
+        data: () => ({
+            //
+        }),
+
+        computed: {
+            isLoggedIn() {
+                return this.$store.getters.isLoggedIn
+            }
+        }
+
+    };
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    .activeColor {
+        color: #7db492 !important;
+    }
 
-#nav {
-  padding: 30px;
-}
+    .primaryColor {
+        color: #004119 !important;
+    }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    .lightPrimaryColor {
+        color: #628744 !important;
+    }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    .redPrimaryColor {
+        color: #fc7a7a !important;
+    }
+
+    .primaryBackgroundColor {
+        background-color: #041c16 !important;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(125, 180, 146, 1);
+        border-radius: 5px;
+    }
+
+    .enableScroll::-webkit-scrollbar-thumb {
+        background-color: rgba(125, 180, 146, 0.6);
+    }
+
+    .disableScroll::-webkit-scrollbar-thumb {
+        background-color: rgba(125, 180, 146, 0);
+    }
+
+    html {
+        overflow: hidden;
+    }
+
 </style>

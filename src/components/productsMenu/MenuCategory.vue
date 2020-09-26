@@ -1,5 +1,5 @@
 <template>
-    <v-col cols="3" class="freezerProduct" @click="openCategoryProducts">
+    <v-col cols="3" class="menuCategory" @click="openCategoryProducts">
 
         <v-card
                 class="mx-auto"

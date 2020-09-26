@@ -3,20 +3,20 @@
         <v-container fluid v-bind:class="[isScrollVisible ? 'enableScroll':'disableScroll']" class="containerHeight"
                      v-on:click="disableScroll" v-on:mousemove="disableScroll" v-on:wheel="enableScroll">
             <v-row>
-                <MenuCategoryProduct v-for="product in products" v-bind:product="product"
-                                     v-bind:key="product.id"></MenuCategoryProduct>
+                <Product v-for="product in products" v-bind:product="product" v-bind:isHave=false
+                         v-bind:key="product.id"></Product>
             </v-row>
         </v-container>
     </div>
 </template>
 
 <script>
-    import MenuCategoryProduct from '@/components/productsMenu/MenuCategoryProduct'
+    import Product from '@/components/freezer/FreezerProduct'
 
     export default {
-        name: "ProductMenuList",
+        name: "NeedProductsList",
         components: {
-            MenuCategoryProduct
+            Product
         },
         data: () => ({
             scrollVisibility: false,

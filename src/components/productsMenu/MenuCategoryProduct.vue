@@ -1,5 +1,5 @@
 <template>
-    <v-col cols="3" class="freezerProduct">
+    <v-col cols="3" class="menuCategoryProduct">
 
         <v-card
                 class="mx-auto"

@@ -3,6 +3,7 @@
 
         <v-card
                 class="mx-auto"
+                @click.stop="enableDialogFreezerTypeChoice"
         >
             <v-img
                     class="white--text align-end"
@@ -34,6 +35,52 @@
                 </v-container>
             </v-card-text>
 
+            <!--DIALOG CHANGE PRODUCT-->
+
+            <v-dialog v-model="dialogProductAdd" max-width="600px">
+                <v-card>
+                    <v-card-title>
+                        <span class="headline">'{{product.name}}' {{isHaveDialogSelected?'for freezer have':'for freezer need'}}</span>
+                    </v-card-title>
+                    <v-card-text>
+                        <v-container>
+                            <v-row>
+                                <v-col cols="8">
+                                    <v-text-field label="Count" required></v-text-field>
+                                </v-col>
+                                <v-col cols="4">
+                                    <v-autocomplete
+                                            :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
+                                            label="Units"
+                                            multiple
+                                    ></v-autocomplete>
+                                </v-col>
+                            </v-row>
+                        </v-container>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="success" text @click="dialogProductAdd = false">
+                            Add
+                        </v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
+
+            <!--DIALOG HAVE/NEED CHANGE PRODUCT-->
+
+            <v-dialog v-model="dialogFreezerTypeChoice" max-width="600px">
+                <v-card>
+                    <v-card-title class="justify-center">
+                        <span class="headline">{{product.name}}</span>
+                    </v-card-title>
+                    <v-card-actions class="justify-space-around">
+                        <v-btn color="success" text @click="enableDialogProductAdd(true)">Add to Have</v-btn>
+                        <v-btn color="error" text @click="enableDialogProductAdd(false)">Add to Need</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
+
         </v-card>
     </v-col>
 </template>
@@ -42,8 +89,25 @@
 
     export default {
         name: 'MenuCategoryProduct',
-        props: ['product']
+        props: ['product'],
+        data() {
+            return {
+                dialogProductAdd: false,
+                dialogFreezerTypeChoice: false,
+                isHaveDialogSelected: false
+            }
+        },
+        methods: {
+            enableDialogProductAdd(isHaveDialogSelected) {
+                this.dialogFreezerTypeChoice = false
+                this.dialogProductAdd = true
+                this.isHaveDialogSelected = isHaveDialogSelected
 
+            },
+            enableDialogFreezerTypeChoice() {
+                this.dialogFreezerTypeChoice = true
+            }
+        }
     }
 </script>
 

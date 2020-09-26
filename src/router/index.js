@@ -7,6 +7,8 @@ import Recipes from '../views/Recipes.vue'
 import Tables from '../views/Tables.vue'
 import ProductsMenu from '../views/ProductsMenu.vue'
 import CategoryProducts from '../views/CategoryProducts.vue'
+import CategoryRecipes from '../views/CategoryRecipes.vue'
+import Recipe from '../views/Recipe.vue'
 
 
 Vue.use(VueRouter)
@@ -46,6 +48,16 @@ const routes = [
         path: '/categoryProducts',
         name: 'Category products',
         component: CategoryProducts
+    },
+    {
+        path: '/categoryRecipes',
+        name: 'Category recipes',
+        component: CategoryRecipes
+    },
+    {
+        path: '/recipe',
+        name: 'Recipe',
+        component: Recipe
     }
 ]
 

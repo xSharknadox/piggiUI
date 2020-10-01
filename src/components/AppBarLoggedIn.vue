@@ -28,7 +28,44 @@
 
         <v-spacer></v-spacer>
 
-        <v-toolbar-title>{{title}}</v-toolbar-title>
+        <v-toolbar-title>
+            <v-menu offset-y>
+                <template v-slot:activator="{on, attrs}">
+                    <v-btn
+                            text
+                            v-bind="attrs"
+                            v-on="on"
+                    >
+                        {{title}}
+                    </v-btn>
+                </template>
+
+                <v-list>
+                    <v-list-item-group>
+
+                        <v-list-item href="/freezers">
+                            <v-list-item-title>
+                                Freezers
+                            </v-list-item-title>
+                        </v-list-item>
+
+                        <v-list-item href="/settings">
+                            <v-list-item-title>
+                                Settings
+                            </v-list-item-title>
+                        </v-list-item>
+
+                        <v-list-item href="/logout">
+                            <v-list-item-title>Log out</v-list-item-title>
+                        </v-list-item>
+
+                    </v-list-item-group>
+
+                </v-list>
+
+            </v-menu>
+
+        </v-toolbar-title>
 
         <v-spacer></v-spacer>
 

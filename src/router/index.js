@@ -9,6 +9,7 @@ import ProductsMenu from '../views/ProductsMenu.vue'
 import CategoryProducts from '../views/CategoryProducts.vue'
 import CategoryRecipes from '../views/CategoryRecipes.vue'
 import Recipe from '../views/Recipe.vue'
+import Freezers from '../views/Freezers.vue'
 
 
 Vue.use(VueRouter)
@@ -58,6 +59,11 @@ const routes = [
         path: '/recipe',
         name: 'Recipe',
         component: Recipe
+    },
+    {
+        path: '/freezers',
+        name: 'Freezers',
+        component: Freezers
     }
 ]
 

@@ -11,25 +11,25 @@
 
 <script>
 
-    import AppBarLoggedIn from '@/components/AppBarLoggedIn'
-    import AppBarNotLoggedIn from '@/components/AppBarNotLoggedIn'
+import AppBarLoggedIn from '@/components/AppBarLoggedIn'
+import AppBarNotLoggedIn from '@/components/AppBarNotLoggedIn'
 
-    export default {
-        name: 'App',
+export default {
+  name: 'App',
 
-        components: {AppBarLoggedIn, AppBarNotLoggedIn},
+  components: {AppBarLoggedIn, AppBarNotLoggedIn},
 
-        data: () => ({
-            //
-        }),
+  data: () => ({
+    //
+  }),
 
-        computed: {
-            isLoggedIn() {
-                return this.$store.getters.isLoggedIn
-            }
-        }
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters.isLoggedIn
+    }
+  }
 
-    };
+};
 </script>
 
 <style>

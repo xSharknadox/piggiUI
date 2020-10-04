@@ -10,7 +10,30 @@ export default new Vuex.Store({
         user: {
             name: "Igor Chernukha"
         },
-        isLoggedIn: true
+        isLoggedIn: true,
+
+        colors: [
+            {
+                name: "red",
+                color: "red"
+            },
+            {
+                name: "teal",
+                color: "teal"
+            },
+            {
+                name: "indigo",
+                color: "indigo"
+            },
+            {
+                name: "orange",
+                color: "orange"
+            },
+            {
+                name: "blue",
+                color: "blue"
+            }
+        ]
     },
     mutations: {
         setActiveTab(state, tab) {
@@ -31,6 +54,9 @@ export default new Vuex.Store({
         },
         isLoggedIn(state) {
             return state.isLoggedIn
+        },
+        getColors(state) {
+            return state.colors
         }
     },
     modules: {}

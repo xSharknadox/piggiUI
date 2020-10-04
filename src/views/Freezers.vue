@@ -334,7 +334,6 @@
                     let indexForRemove;
                     let selectedFreezerId = this.selectedFreezer.id
                     for (const index in this.freezers) {
-                        console.error(this.freezers[index])
                         if (this.freezers[index].id === selectedFreezerId) {
                             indexForRemove = index
                         }

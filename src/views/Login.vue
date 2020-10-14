@@ -11,13 +11,14 @@
 <script>
 import LoginForm from "@/components/auth/LoginForm";
 
-    export default {
-        name: 'Login',
-        components: {LoginForm},
-        beforeCreate: function () {
-            this.$store.commit('setActiveTab', "login")
-        }
-    }
+export default {
+  name: 'Login',
+  components: {LoginForm},
+  beforeCreate: function () {
+    this.$store.commit('setActiveTab', "login")
+  }
+
+}
 </script>
 
 <style scoped>

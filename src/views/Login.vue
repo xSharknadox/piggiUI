@@ -17,7 +17,6 @@ export default {
   beforeCreate: function () {
     this.$store.commit('setActiveTab', "login")
   }
-
 }
 </script>
 

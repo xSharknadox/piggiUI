@@ -55,8 +55,8 @@
                             </v-list-item-title>
                         </v-list-item>
 
-                        <v-list-item href="/logout">
-                            <v-list-item-title>Log out</v-list-item-title>
+                        <v-list-item v-on:click="logout">
+                          <v-list-item-title>Log out</v-list-item-title>
                         </v-list-item>
 
                     </v-list-item-group>
@@ -95,15 +95,20 @@
 
 <script>
     export default {
-        name: "AppBarLoggedIn",
-        computed: {
-            activeTab() {
-                return this.$store.getters.getActiveTab
-            },
-            title() {
-                return this.$store.getters.getTitle
-            }
+      name: "AppBarLoggedIn",
+      computed: {
+        activeTab() {
+          return this.$store.getters.getActiveTab
+        },
+        title() {
+          return this.$store.getters.getTitle
         }
+      },
+      methods: {
+        logout() {
+          this.$store.dispatch('logout')
+        }
+      }
     }
 </script>
 
